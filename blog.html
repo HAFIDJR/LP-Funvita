@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: Poppins, sans-serif;
+      }
+
+      .slider-items img {
+        margin: 20px;
+      }
+
+      .slider-items {
+        animation: scrolling 20s linear infinite;
+      }
+
+      @keyframes scrolling {
+        0% {
+          transform: translateX(80%);
+        }
+
+        100% {
+          transform: translateX(-20%);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="max-w-[1920px] mx-auto">
+    <div class="bg-[#f8f9ff] text-black text-[15px]">
+      <header class="px-4 sm:px-10 z-50 min-h-[70px]">
+        <div class="relative flex flex-wrap items-center gap-4 justify-between">
+          <a href="javascript:void(0)"
+            ><img src="./logo.png" alt="logo" class="w-36" />
+          </a>
+
+          <div
+            id="collapseMenu"
+            class="max-lg:hidden lg:!block max-lg:fixed max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50 z-50"
+          >
+            <button
+              id="toggleClose"
+              class="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 fill-black"
+                viewBox="0 0 320.591 320.591"
+              >
+                <path
+                  d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                  data-original="#000000"
+                ></path>
+                <path
+                  d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                  data-original="#000000"
+                ></path>
+              </svg>
+            </button>
+            <ul
+              class="lg:ml-12 lg:flex gap-x-6 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50"
+            >
+              <li class="mb-6 hidden max-lg:block">
+                <a href="javascript:void(0)"
+                  ><img src="./logo.png" alt="logo" class="w-36" />
+                </a>
+              </li>
+              <li class="max-lg:border-b max-lg:py-3 px-3">
+                <a
+                  href="javascript:void(0)"
+                  class="hover:text-blue-600 text-blue-600 block font-semibold transition-all"
+                  >Home</a
+                >
+              </li>
+              <li class="max-lg:border-b max-lg:py-3 px-3">
+                <a
+                  href="team.html"
+                  class="hover:text-blue-600 block font-semibold transition-all"
+                  >Team</a
+                >
+              </li>
+              <li class="max-lg:border-b max-lg:py-3 px-3">
+                <a
+                  href="javascript:void(0)"
+                  class="hover:text-blue-600 block font-semibold transition-all"
+                  >Feature</a
+                >
+              </li>
+              <li class="max-lg:border-b max-lg:py-3 px-3">
+                <a
+                  href="javascript:void(0)"
+                  class="hover:text-blue-600 block font-semibold transition-all"
+                  >Blog</a
+                >
+              </li>
+              <li class="max-lg:border-b max-lg:py-3 px-3">
+                <a
+                  href="javascript:void(0)"
+                  class="hover:text-blue-600 block font-semibold transition-all"
+                  >About</a
+                >
+              </li>
+            </ul>
+          </div>
+          <button id="toggleOpen" class="lg:hidden ml-7">
+            <svg class="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="">
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="font-[Poppins]">
+        <section id="Featured" class="mt-[5px]">
+          <div class="main-carousel w-full">
+            <div
+              class="featured-news-card relative w-full h-[550px] flex shrink-0 overflow-hidden"
+            >
+              <img
+                src="assets/images/thumbnails/th-building.png"
+                class="thumbnail absolute w-full h-full object-cover"
+                alt="icon"
+              />
+              <div
+                class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10"
+              ></div>
+              <div
+                class="card-detail max-w-[1130px] w-full mx-auto flex items-end justify-between pb-10 relative z-20"
+              >
+                <div class="flex flex-col gap-[10px]">
+                  <p class="text-white">Featured</p>
+                  <a
+                    href="details.html"
+                    class="font-bold text-4xl leading-[45px] text-white two-lines hover:underline transition-all duration-300"
+                    >Generation Z Prefer Remote Working Than Big Salary</a
+                  >
+                  <p class="text-white">12 Jun, 2024 • Business</p>
+                </div>
+                <div class="prevNextButtons flex items-center gap-4 mb-[60px]">
+                  <button
+                    class="button--previous appearance-none w-[38px] h-[38px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <img src="assets/images/icons/arrow.svg" alt="arrow" />
+                  </button>
+                  <button
+                    class="button--next appearance-none w-[38px] h-[38px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300 rotate-180"
+                  >
+                    <img src="assets/images/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="featured-news-card relative w-full h-[550px] flex shrink-0 overflow-hidden"
+            >
+              <img
+                src="assets/images/thumbnails/th-building.png"
+                class="thumbnail absolute w-full h-full object-cover"
+                alt="icon"
+              />
+              <div
+                class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10"
+              ></div>
+              <div
+                class="card-detail max-w-[1130px] w-full mx-auto flex items-end justify-between pb-10 relative z-20"
+              >
+                <div class="flex flex-col gap-[10px]">
+                  <p class="text-white">Featured</p>
+                  <a
+                    href="details.html"
+                    class="font-bold text-4xl leading-[45px] text-white two-lines hover:underline transition-all duration-300"
+                    >Generation Z Prefer Remote Working Than Big Salary</a
+                  >
+                  <p class="text-white">12 Jun, 2024 • Business</p>
+                </div>
+                <div class="prevNextButtons flex items-center gap-4 mb-[60px]">
+                  <button
+                    class="button--previous appearance-none w-[38px] h-[38px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <img src="assets/images/icons/arrow.svg" alt="arrow" />
+                  </button>
+                  <button
+                    class="button--next appearance-none w-[38px] h-[38px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300 rotate-180"
+                  >
+                    <img src="assets/images/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="featured-news-card relative w-full h-[550px] flex shrink-0 overflow-hidden"
+            >
+              <img
+                src="assets/images/thumbnails/th-building.png"
+                class="thumbnail absolute w-full h-full object-cover"
+                alt="icon"
+              />
+              <div
+                class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10"
+              ></div>
+              <div
+                class="card-detail max-w-[1130px] w-full mx-auto flex items-end justify-between pb-10 relative z-20"
+              >
+                <div class="flex flex-col gap-[10px]">
+                  <p class="text-white">Featured</p>
+                  <a
+                    href="details.html"
+                    class="font-bold text-4xl leading-[45px] text-white two-lines hover:underline transition-all duration-300"
+                    >Generation Z Prefer Remote Working Than Big Salary</a
+                  >
+                  <p class="text-white">12 Jun, 2024 • Business</p>
+                </div>
+                <div class="prevNextButtons flex items-center gap-4 mb-[60px]">
+                  <button
+                    class="button--previous appearance-none w-[38px] h-[38px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <img src="assets/images/icons/arrow.svg" alt="arrow" />
+                  </button>
+                  <button
+                    class="button--next appearance-none w-[38px] h-[38px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300 rotate-180"
+                  >
+                    <img src="assets/images/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <nav
+            id="Category"
+            class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]"
+          >
+            <a
+              href="categoryPage.html"
+              class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]"
+            >
+              <div class="w-6 h-6 flex shrink-0">
+                <img src="assets/images/icons/heart.svg" alt="icon" />
+              </div>
+              <span>Health</span>
+            </a>
+            <a
+              href="categoryPage.html"
+              class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]"
+            >
+              <div class="w-6 h-6 flex shrink-0">
+                <img src="assets/images/icons/status-up.svg" alt="icon" />
+              </div>
+              <span>Business</span>
+            </a>
+            <a
+              href="categoryPage.html"
+              class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]"
+            >
+              <div class="w-6 h-6 flex shrink-0">
+                <img src="assets/images/icons/car.svg" alt="icon" />
+              </div>
+              <span>Automotive</span>
+            </a>
+            <a
+              href="categoryPage.html"
+              class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]"
+            >
+              <div class="w-6 h-6 flex shrink-0">
+                <img src="assets/images/icons/global.svg" alt="icon" />
+              </div>
+              <span>Entertainment</span>
+            </a>
+            <a
+              href="categoryPage.html"
+              class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]"
+            >
+              <div class="w-6 h-6 flex shrink-0">
+                <img src="assets/images/icons/coffee.svg" alt="icon" />
+              </div>
+              <span>Foods</span>
+            </a>
+            <a
+              href="categoryPage.html"
+              class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]"
+            >
+              <div class="w-6 h-6 flex shrink-0">
+                <img src="assets/images/icons/courthouse.svg" alt="icon" />
+              </div>
+              <span>Politic</span>
+            </a>
+            <a
+              href="categoryPage.html"
+              class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]"
+            >
+              <div class="w-6 h-6 flex shrink-0">
+                <img src="assets/images/icons/cup.svg" alt="icon" />
+              </div>
+              <span>Sport</span>
+            </a>
+          </nav>
+        </section>
+        <section
+          id="Up-to-date"
+          class="max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-[70px]"
+        >
+          <div class="flex justify-between items-center">
+            <h2 class="font-bold text-[26px] leading-[39px]">
+              Latest Hot News <br />
+              Good for Curiousity
+            </h2>
+            <p
+              class="badge-orange rounded-full p-[8px_18px] bg-[#FFECE1] font-bold text-sm leading-[21px] text-[#FF6B18] w-fit"
+            >
+              UP TO DATE
+            </p>
+          </div>
+          <div class="grid grid-cols-3 gap-[30px]">
+            <a href="details.html" class="card-news">
+              <div
+                class="rounded-[20px] ring-1 ring-[#EEF0F7] p-[26px_20px] flex flex-col gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300 bg-white"
+              >
+                <div
+                  class="thumbnail-container w-full h-[200px] rounded-[20px] flex shrink-0 overflow-hidden relative"
+                >
+                  <p
+                    class="badge-white absolute top-5 left-5 rounded-full p-[8px_18px] bg-white font-bold text-xs leading-[18px]"
+                  >
+                    SPORT
+                  </p>
+                  <img
+                    src="assets/images/thumbnails/th-cyclist.png"
+                    class="object-cover w-full h-full"
+                    alt="thumbnail"
+                  />
+                </div>
+                <div class="card-info flex flex-col gap-[6px]">
+                  <h3 class="font-bold text-lg leading-[27px]">
+                    Bersepeda dapat membuat diri menjadi lebih baik lagi
+                  </h3>
+                  <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                    12 Jun, 2024
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="details.html" class="card-news">
+              <div
+                class="rounded-[20px] ring-1 ring-[#EEF0F7] p-[26px_20px] flex flex-col gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300 bg-white"
+              >
+                <div
+                  class="thumbnail-container w-full h-[200px] rounded-[20px] flex shrink-0 overflow-hidden relative"
+                >
+                  <p
+                    class="badge-white absolute top-5 left-5 rounded-full p-[8px_18px] bg-white font-bold text-xs leading-[18px]"
+                  >
+                    ENTERTAINMENT
+                  </p>
+                  <img
+                    src="assets/images/thumbnails/camp.png"
+                    class="object-cover w-full h-full"
+                    alt="thumbnail"
+                  />
+                </div>
+                <div class="card-info flex flex-col gap-[6px]">
+                  <h3 class="font-bold text-lg leading-[27px]">
+                    Beberapa artis ini merayakan ultah di tengah hutan raya
+                  </h3>
+                  <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                    12 Jun, 2024
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="details.html" class="card-news">
+              <div
+                class="rounded-[20px] ring-1 ring-[#EEF0F7] p-[26px_20px] flex flex-col gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300 bg-white"
+              >
+                <div
+                  class="thumbnail-container w-full h-[200px] rounded-[20px] flex shrink-0 overflow-hidden relative"
+                >
+                  <p
+                    class="badge-white absolute top-5 left-5 rounded-full p-[8px_18px] bg-white font-bold text-xs leading-[18px]"
+                  >
+                    POLITIC
+                  </p>
+                  <img
+                    src="assets/images/thumbnails/th-demonstration.png"
+                    class="object-cover w-full h-full"
+                    alt="thumbnail"
+                  />
+                </div>
+                <div class="card-info flex flex-col gap-[6px]">
+                  <h3 class="font-bold text-lg leading-[27px]">
+                    Terjadi demo pada ibu kota jakarta membuat macet parah
+                  </h3>
+                  <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                    12 Jun, 2024
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
+        <section
+          id="Best-authors"
+          class="max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-[70px]"
+        >
+          <div class="flex flex-col text-center gap-[14px] items-center">
+            <p
+              class="badge-orange rounded-full p-[8px_18px] bg-[#FFECE1] font-bold text-sm leading-[21px] text-[#FF6B18] w-fit"
+            >
+              BEST AUTHORS
+            </p>
+            <h2 class="font-bold text-[26px] leading-[39px]">
+              Explore All Masterpieces <br />
+              Written by People
+            </h2>
+          </div>
+          <div class="grid grid-cols-6 gap-[30px]">
+            <a href="author.html" class="card-authors">
+              <div
+                class="rounded-[20px] border border-[#EEF0F7] p-[26px_20px] flex flex-col items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+              >
+                <div
+                  class="w-[70px] h-[70px] flex shrink-0 rounded-full overflow-hidden"
+                >
+                  <img
+                    src="assets/images/photos/photo.png"
+                    class="object-cover w-full h-full"
+                    alt="avatar"
+                  />
+                </div>
+                <div class="flex flex-col gap-1 text-center">
+                  <p class="font-semibold">Junior Parrito</p>
+                  <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                    3,492 News
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="author.html" class="card-authors">
+              <div
+                class="rounded-[20px] border border-[#EEF0F7] p-[26px_20px] flex flex-col items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+              >
+                <div
+                  class="w-[70px] h-[70px] flex shrink-0 rounded-full overflow-hidden"
+                >
+                  <img
+                    src="assets/images/photos/photo1.png"
+                    class="object-cover w-full h-full"
+                    alt="avatar"
+                  />
+                </div>
+                <div class="flex flex-col gap-1 text-center">
+                  <p class="font-semibold">Sabrina Juli</p>
+                  <p class="text-sm leading-[21px] text-[#A3A6AE]">312 News</p>
+                </div>
+              </div>
+            </a>
+            <a href="author.html" class="card-authors">
+              <div
+                class="rounded-[20px] border border-[#EEF0F7] p-[26px_20px] flex flex-col items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+              >
+                <div
+                  class="w-[70px] h-[70px] flex shrink-0 rounded-full overflow-hidden"
+                >
+                  <img
+                    src="assets/images/photos/photo2.png"
+                    class="object-cover w-full h-full"
+                    alt="avatar"
+                  />
+                </div>
+                <div class="flex flex-col gap-1 text-center">
+                  <p class="font-semibold">Ijan Malawi</p>
+                  <p class="text-sm leading-[21px] text-[#A3A6AE]">44 News</p>
+                </div>
+              </div>
+            </a>
+            <a href="author.html" class="card-authors">
+              <div
+                class="rounded-[20px] border border-[#EEF0F7] p-[26px_20px] flex flex-col items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+              >
+                <div
+                  class="w-[70px] h-[70px] flex shrink-0 rounded-full overflow-hidden"
+                >
+                  <img
+                    src="assets/images/photos/photo3.png"
+                    class="object-cover w-full h-full"
+                    alt="avatar"
+                  />
+                </div>
+                <div class="flex flex-col gap-1 text-center">
+                  <p class="font-semibold">Rita Putria</p>
+                  <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                    15,398 News
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="author.html" class="card-authors">
+              <div
+                class="rounded-[20px] border border-[#EEF0F7] p-[26px_20px] flex flex-col items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+              >
+                <div
+                  class="w-[70px] h-[70px] flex shrink-0 rounded-full overflow-hidden"
+                >
+                  <img
+                    src="assets/images/photos/photo4.png"
+                    class="object-cover w-full h-full"
+                    alt="avatar"
+                  />
+                </div>
+                <div class="flex flex-col gap-1 text-center">
+                  <p class="font-semibold">Shayna Xin</p>
+                  <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                    3,492 News
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="author.html" class="card-authors">
+              <div
+                class="rounded-[20px] border border-[#EEF0F7] p-[26px_20px] flex flex-col items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+              >
+                <div
+                  class="w-[70px] h-[70px] flex shrink-0 rounded-full overflow-hidden"
+                >
+                  <img
+                    src="assets/images/photos/photo5.png"
+                    class="object-cover w-full h-full"
+                    alt="avatar"
+                  />
+                </div>
+                <div class="flex flex-col gap-1 text-center">
+                  <p class="font-semibold">Dhi Pakao</p>
+                  <p class="text-sm leading-[21px] text-[#A3A6AE]">223 News</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
+        <section
+          id="Advertisement"
+          class="max-w-[1130px] mx-auto flex justify-center mt-[70px]"
+        >
+          <div class="flex flex-col gap-3 shrink-0 w-fit">
+            <a href="#">
+              <div
+                class="w-[900px] h-[120px] flex shrink-0 border border-[#EEF0F7] rounded-2xl overflow-hidden"
+              >
+                <img
+                  src="assets/images/iklans/bannerWide1.png"
+                  class="object-cover w-full h-full"
+                  alt="ads"
+                />
+              </div>
+            </a>
+            <p
+              class="font-medium text-sm leading-[21px] text-[#A3A6AE] flex gap-1"
+            >
+              Our Advertisement
+              <a href="#" class="w-[18px] h-[18px]"
+                ><img src="assets/images/icons/message-question.svg" alt="icon"
+              /></a>
+            </p>
+          </div>
+        </section>
+        <section
+          id="Latest-entertainment"
+          class="max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-[70px]"
+        >
+          <div class="flex justify-between items-center">
+            <h2 class="font-bold text-[26px] leading-[39px]">
+              Latest For You <br />
+              in Entertainment
+            </h2>
+            <a
+              href="categoryPage.html"
+              class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]"
+              >Explore All</a
+            >
+          </div>
+          <div class="flex justify-between items-center h-fit">
+            <div
+              class="featured-news-card relative w-full h-[424px] flex flex-1 rounded-[20px] overflow-hidden"
+            >
+              <img
+                src="assets/images/thumbnails/th-building.png"
+                class="thumbnail absolute w-full h-full object-cover"
+                alt="icon"
+              />
+              <div
+                class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10"
+              ></div>
+              <div
+                class="card-detail w-full flex items-end p-[30px] relative z-20"
+              >
+                <div class="flex flex-col gap-[10px]">
+                  <p class="text-white">Featured</p>
+                  <a
+                    href="details.html"
+                    class="font-bold text-[30px] leading-[36px] text-white hover:underline transition-all duration-300"
+                    >Rela Tampil Menarik Depan Wanita, Pria Ini Jadi Bahan
+                    Bicaraan</a
+                  >
+                  <p class="text-white">12 Jun, 2024</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-[424px] w-fit px-5 overflow-y-scroll overflow-x-hidden relative custom-scrollbar"
+            >
+              <div class="w-[455px] flex flex-col gap-5 shrink-0">
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/th-sunbathe.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Bikin house party tanpa biaya mahal, begini tipsnya!
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Gaya pakaian pernikahan artis ini beneran unik
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/th-cyclist.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Tips bersepeda bareng pasangan baru, makin seru!
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Bikin house party tanpa biaya mahal, begini tipsnya!
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Bikin house party tanpa biaya mahal, begini tipsnya!
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Bikin house party tanpa biaya mahal, begini tipsnya!
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div
+                class="sticky z-10 bottom-0 w-full h-[100px] bg-gradient-to-b from-[rgba(255,255,255,0.19)] to-[rgba(255,255,255,1)]"
+              ></div>
+            </div>
+          </div>
+        </section>
+        <section
+          id="Latest-business"
+          class="max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-[70px]"
+        >
+          <div class="flex justify-between items-center">
+            <h2 class="font-bold text-[26px] leading-[39px]">
+              Latest For You <br />
+              in Business
+            </h2>
+            <a
+              href="categoryPage.html"
+              class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]"
+              >Explore All</a
+            >
+          </div>
+          <div class="flex justify-between items-center h-fit">
+            <div
+              class="featured-news-card relative w-full h-[424px] flex flex-1 rounded-[20px] overflow-hidden"
+            >
+              <img
+                src="assets/images/thumbnails/th-building.png"
+                class="thumbnail absolute w-full h-full object-cover"
+                alt="icon"
+              />
+              <div
+                class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10"
+              ></div>
+              <div
+                class="card-detail w-full flex items-end p-[30px] relative z-20"
+              >
+                <div class="flex flex-col gap-[10px]">
+                  <p class="text-white">Featured</p>
+                  <a
+                    href="details.html"
+                    class="font-bold text-[30px] leading-[36px] text-white hover:underline transition-all duration-300"
+                    >Rela Tampil Menarik Depan Wanita, Pria Ini Jadi Bahan
+                    Bicaraan</a
+                  >
+                  <p class="text-white">12 Jun, 2024</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-[424px] w-fit px-5 overflow-y-scroll overflow-x-hidden relative custom-scrollbar"
+            >
+              <div class="w-[455px] flex flex-col gap-5 shrink-0">
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/th-building.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Angga telah launching office space special edition
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/th-key.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Pembelian rumah saat ini tanpa perlu down payment
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Tips trading ala generation Z bikin kita sukses untung
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Bikin house party tanpa biaya mahal, begini tipsnya!
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Bikin house party tanpa biaya mahal, begini tipsnya!
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Bikin house party tanpa biaya mahal, begini tipsnya!
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div
+                class="sticky z-10 bottom-0 w-full h-[100px] bg-gradient-to-b from-[rgba(255,255,255,0.19)] to-[rgba(255,255,255,1)]"
+              ></div>
+            </div>
+          </div>
+        </section>
+        <section
+          id="Latest-automotive"
+          class="max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-[70px]"
+        >
+          <div class="flex justify-between items-center">
+            <h2 class="font-bold text-[26px] leading-[39px]">
+              Latest For You <br />
+              in Automotive
+            </h2>
+            <a
+              href="categoryPage.html"
+              class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]"
+              >Explore All</a
+            >
+          </div>
+          <div class="flex justify-between items-center h-fit">
+            <div
+              class="featured-news-card relative w-full h-[424px] flex flex-1 rounded-[20px] overflow-hidden"
+            >
+              <img
+                src="assets/images/thumbnails/th-bulldozer.png"
+                class="thumbnail absolute w-full h-full object-cover"
+                alt="icon"
+              />
+              <div
+                class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10"
+              ></div>
+              <div
+                class="card-detail w-full flex items-end p-[30px] relative z-20"
+              >
+                <div class="flex flex-col gap-[10px]">
+                  <p class="text-white">Featured</p>
+                  <a
+                    href="details.html"
+                    class="font-bold text-[30px] leading-[36px] text-white hover:underline transition-all duration-300"
+                    >Rela Tampil Menarik Depan Wanita, Pria Ini Jadi Bahan
+                    Bicaraan</a
+                  >
+                  <p class="text-white">12 Jun, 2024</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-[424px] w-fit px-5 overflow-y-scroll overflow-x-hidden relative custom-scrollbar"
+            >
+              <div class="w-[455px] flex flex-col gap-5 shrink-0">
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Tersedia lebih dari 10,000 charger di area kota Bandung
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Porscha merilis mesin baru bertenaga 5,000 power
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Tesla memperbarui teknologi self driving lebih akurat
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Bikin house party tanpa biaya mahal, begini tipsnya!
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Bikin house party tanpa biaya mahal, begini tipsnya!
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="details.html" class="card py-[2px]">
+                  <div
+                    class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300"
+                  >
+                    <div
+                      class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/thumbnails/camp.png"
+                        class="object-cover w-full h-full"
+                        alt="thumbnail"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-center-center gap-[6px]">
+                      <h3 class="font-bold text-lg leading-[27px]">
+                        Bikin house party tanpa biaya mahal, begini tipsnya!
+                      </h3>
+                      <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                        12 Jun, 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div
+                class="sticky z-10 bottom-0 w-full h-[100px] bg-gradient-to-b from-[rgba(255,255,255,0.19)] to-[rgba(255,255,255,1)]"
+              ></div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="bg-white px-4 sm:px-10 py-12 mt-32">
+        <div
+          class="grid max-sm:grid-cols-1 max-lg:grid-cols-2 lg:grid-cols-5 lg:gap-14 max-lg:gap-8"
+        >
+          <div class="lg:col-span-2">
+            <h4 class="text-xl font-semibold mb-6">About Us</h4>
+            <p>
+              PT. Funvita Indonesia Investama, perusahaan yang bergerak di
+              bidang konsultan peningkatan menajemen pemasaran perusahaan serta
+              training digital marketing, literasi keuangan dan branding produk.
+            </p>
+
+            <div class="bg-[#f8f9ff] flex px-4 py-3 rounded-md text-left mt-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 192.904 192.904"
+                width="16px"
+                class="fill-gray-500 mr-3 rotate-90"
+              >
+                <path
+                  d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z"
+                ></path>
+              </svg>
+              <input
+                type="email"
+                placeholder="Search..."
+                class="w-full outline-none bg-transparent text-gray-600 text-[15px]"
+              />
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-semibold mb-6">Resources</h4>
+            <ul class="space-y-5">
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >Webinars</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >Ebooks</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >Templates</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >Tutorials</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold mb-6">Layanan Kami</h4>
+            <ul class="space-y-5">
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >Konsultan Bisnis</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >Training Digital Marketing</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >Training Digital Literasi Keuangan</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >Training Branding Produk</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >Public Speaking
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >Collaboration</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-semibold mb-6">About Us</h4>
+            <ul class="space-y-5">
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >Cerita Kita</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >Visi dan Misi</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >kebijakan privasi</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="hover:text-blue-600"
+                  >Syarat dan Ketentuan</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-8" />
+
+        <p class="text-center">
+          Copyright © 2025
+          <a href="" target="_blank" class="hover:underline mx-1"
+            >M Hafid Nur Firmansyah</a
+          >
+          All Rights Reserved.
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      var toggleOpen = document.getElementById("toggleOpen");
+      var toggleClose = document.getElementById("toggleClose");
+      var collapseMenu = document.getElementById("collapseMenu");
+
+      function handleClick() {
+        if (collapseMenu.style.display === "block") {
+          collapseMenu.style.display = "none";
+        } else {
+          collapseMenu.style.display = "block";
+        }
+      }
+
+      toggleOpen.addEventListener("click", handleClick);
+      toggleClose.addEventListener("click", handleClick);
+    </script>
+
+    <script src="js/two-lines-text.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="js/carousel.js"></script>
+  </body>
+</html>
